@@ -1,0 +1,183 @@
+import type { Genre, Movie } from "./type";
+
+export const movies: Movie[] = [
+  {
+    _id: "6858de082cc606f4cbe06633",
+    title: "Airplane",
+    numberInStock: 5,
+    dailyRentalRate: 2,
+    genre: {
+      _id: "6858de082cc606f4cbe06631",
+      name: "Comedy",
+    },
+  },
+  {
+    _id: "6858de082cc606f4cbe06635",
+    title: "The Hangover",
+    numberInStock: 10,
+    dailyRentalRate: 2,
+    genre: {
+      _id: "6858de082cc606f4cbe06631",
+      name: "Comedy",
+    },
+  },
+  {
+    _id: "6858de082cc606f4cbe06637",
+    title: "Wedding Crashers",
+    numberInStock: 15,
+    dailyRentalRate: 2,
+    genre: {
+      _id: "6858de082cc606f4cbe06631",
+      name: "Comedy",
+    },
+  },
+  {
+    _id: "6858de082cc606f4cbe0663c",
+    title: "Die Hard",
+    numberInStock: 5,
+    dailyRentalRate: 2,
+    genre: {
+      _id: "6858de082cc606f4cbe0663a",
+      name: "Action",
+    },
+  },
+  {
+    _id: "6858de082cc606f4cbe0663e",
+    title: "Terminator",
+    numberInStock: 10,
+    dailyRentalRate: 2,
+    genre: {
+      _id: "6858de082cc606f4cbe0663a",
+      name: "Action",
+    },
+  },
+  {
+    _id: "6858de082cc606f4cbe06640",
+    title: "The Avengers",
+    numberInStock: 15,
+    dailyRentalRate: 2,
+    genre: {
+      _id: "6858de082cc606f4cbe0663a",
+      name: "Action",
+    },
+  },
+  {
+    _id: "6858de082cc606f4cbe06645",
+    title: "The Notebook",
+    numberInStock: 5,
+    dailyRentalRate: 2,
+    genre: {
+      _id: "6858de082cc606f4cbe06643",
+      name: "Romance",
+    },
+  },
+  {
+    _id: "6858de082cc606f4cbe06647",
+    title: "When Harry Met Sally",
+    numberInStock: 10,
+    dailyRentalRate: 2,
+    genre: {
+      _id: "6858de082cc606f4cbe06643",
+      name: "Romance",
+    },
+  },
+  {
+    _id: "6858de082cc606f4cbe06649",
+    title: "Pretty Woman",
+    numberInStock: 15,
+    dailyRentalRate: 2,
+    genre: {
+      _id: "6858de082cc606f4cbe06643",
+      name: "Romance",
+    },
+  },
+  {
+    _id: "6858de082cc606f4cbe0664e",
+    title: "The Sixth Sense",
+    numberInStock: 5,
+    dailyRentalRate: 2,
+    genre: {
+      _id: "6858de082cc606f4cbe0664c",
+      name: "Thriller",
+    },
+  },
+  {
+    _id: "6858de082cc606f4cbe06650",
+    title: "Gone Girl",
+    numberInStock: 10,
+    dailyRentalRate: 2,
+    genre: {
+      _id: "6858de082cc606f4cbe0664c",
+      name: "Thriller",
+    },
+  },
+  {
+    _id: "6858de082cc606f4cbe06652",
+    title: "The Others",
+    numberInStock: 15,
+    dailyRentalRate: 2,
+    genre: {
+      _id: "6858de082cc606f4cbe0664c",
+      name: "Thriller",
+    },
+  },
+  {
+    _id: "6858df962b2c60f56e245813",
+    title: "Spider Man 1",
+    genre: {
+      _id: "6858de082cc606f4cbe0664c",
+      name: "Thriller",
+    },
+    numberInStock: 100,
+    dailyRentalRate: 20,
+  },
+  {
+    _id: "6858dff07710d9f5d0870072",
+    title: "Spider Man 2",
+    genre: {
+      _id: "6858de082cc606f4cbe0664c",
+      name: "Thriller",
+    },
+    numberInStock: 100,
+    dailyRentalRate: 20,
+  },
+  {
+    _id: "6858e6b77710d9f5d0870077",
+    title: "Spider Man 2",
+    genre: {
+      _id: "6858de082cc606f4cbe0664c",
+      name: "Thriller",
+    },
+    numberInStock: 100,
+    dailyRentalRate: 20,
+  },
+  {
+    _id: "6858e6c17710d9f5d087007b",
+    title: "Spider Man 3",
+    genre: {
+      _id: "6858de082cc606f4cbe0664c",
+      name: "Thriller",
+    },
+    numberInStock: 100,
+    dailyRentalRate: 20,
+  },
+];
+
+export const genres: Genre[] = [
+  {
+    _id: "6858de082cc606f4cbe0663a",
+    name: "Action",
+  },
+  {
+    _id: "6858de082cc606f4cbe06631",
+    name: "Comedy",
+  },
+  {
+    _id: "6858de082cc606f4cbe06643",
+    name: "Romance",
+  },
+  {
+    _id: "6858de082cc606f4cbe0664c",
+    name: "Thriller",
+  },
+];

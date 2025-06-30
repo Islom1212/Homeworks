@@ -11,5 +11,15 @@
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.7"
+  },
+  "compilerOptions": {
+    "target": "es6",
+    "lib": [
+      "dom",
+      "es6"
+    ]
   }
 }
