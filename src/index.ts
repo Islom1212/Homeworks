@@ -27,3 +27,23 @@ function init() {
 }
 
 window.addEventListener("load", init);
+
+//DESTRUCTURING OBJECT
+
+// const person = {
+//   name: "kent",
+//   age: 20,
+//   address: {
+//     state: {
+//       name: "UZB",
+//       code: "+998",
+//     },
+//     city: "Tashkent city",
+//   },
+// };
+
+// const { name, age, address } = person;
+// const { state, city } = address;
+// const { name: stateName, code } = state;
+
+// console.log(name, age, address);

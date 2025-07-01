@@ -36,11 +36,6 @@ export const PAGES: Record<Pathname, string> = {
       <div class="row">
         <div class="col-2">
           <ul class="list-group">
-            <li class="list-group-item active" aria-current="true">All</li>
-            <li class="list-group-item">Action</li>
-            <li class="list-group-item">Comedy</li>
-            <li class="list-group-item">Romance</li>
-            <li class="list-group-item">Triller</li>
           </ul>
         </div>
         <div class="col-10">

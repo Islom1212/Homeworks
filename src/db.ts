@@ -165,6 +165,10 @@ export const movies: Movie[] = [
 
 export const genres: Genre[] = [
   {
+    _id: "",
+    name: "All",
+  },
+  {
     _id: "6858de082cc606f4cbe0663a",
     name: "Action",
   },
