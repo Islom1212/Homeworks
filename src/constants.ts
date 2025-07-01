@@ -1,3 +1,4 @@
+import { movies } from "./db";
 import { loginInit, registerInit, moviesInit } from "./pages/main";
 import type { Path, Pathname } from "./type";
 export const REDIRECTS: Record<Path, Pathname> = {
@@ -40,7 +41,7 @@ export const PAGES: Record<Pathname, string> = {
         </div>
         <div class="col-10">
           <button class="btn btn-primary mb-3">New Movie</button>
-          <p>showing 3 movies in the database.</p>
+          <p>showing ${movies.length} movies in the database.</p>
           <input
             type="text"
             class="form-control my-3"

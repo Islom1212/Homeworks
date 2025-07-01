@@ -185,3 +185,4 @@ export const genres: Genre[] = [
     name: "Thriller",
   },
 ];
+export const currentMovies: Movie[] = [];
