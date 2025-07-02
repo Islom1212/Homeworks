@@ -11,6 +11,80 @@ const state = {
   pageSize: 3,
 };
 
+//HANDLER FUNCTIONS
+// These functions handle the events and actions on the UI elements
+function SearchHandler() {
+  const searchInput = document.querySelector(".search-btn") as HTMLInputElement;
+
+  searchInput.addEventListener("input", () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    currentMovies.splice(0, currentMovies.length);
+
+    for (let movie of movies) {
+      if (movie.title.toLowerCase().includes(searchTerm)) {
+        currentMovies.push(movie);
+      }
+    }
+
+    renderMovies(paginate(currentMovies, state.pageSize, state.currentPage));
+    renderPagination(currentMovies.length);
+    handlePagination();
+  });
+}
+
+function handlePagination() {
+  const pageItem = document.querySelectorAll(
+    ".page-item"
+  ) as NodeListOf<HTMLLIElement>;
+
+  pageItem.forEach((page) => {
+    page.addEventListener("click", () => {
+      pageItem.forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      state.currentPage = Number(page.textContent);
+      renderMovies(paginate(currentMovies, state.pageSize, state.currentPage));
+      page.classList.add("active");
+    });
+  });
+}
+function handleGenres() {
+  const listItems = document.querySelectorAll(
+    ".list-group-item"
+  ) as NodeListOf<HTMLLIElement>;
+
+  listItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      listItems.forEach((item) => {
+        item.classList.remove("active");
+      });
+      item.classList.add("active");
+      state.genre = item.textContent!;
+      currentMovies.splice(0, currentMovies.length);
+
+      for (let genre of genres) {
+        if (state.genre === genre.name) {
+          for (let movie of movies) {
+            if (movie.genre.name === state.genre) {
+              currentMovies.push(movie);
+            } else if (state.genre === "All") {
+              currentMovies.push(movie);
+            }
+          }
+          console.log(currentMovies);
+        }
+      }
+      renderMovies(paginate(currentMovies, state.pageSize, state.currentPage));
+      renderPagination(currentMovies.length);
+      handlePagination();
+    });
+  });
+}
+
+//UI FUNCTIONS
+// These functions render the UI elements based on the data and state
+// They update the DOM with the current state of the application
 function renderMovies(list: Movie[]) {
   const tableBody = document.querySelector("tbody") as HTMLTableSectionElement;
   tableBody.innerHTML = "";
@@ -77,56 +151,15 @@ function renderPagination(total: number) {
   }
 }
 
-function handlePagination() {
-  const pageItem = document.querySelectorAll(
-    ".page-item"
-  ) as NodeListOf<HTMLLIElement>;
+function paginate(item: Movie[], pageSize: number, currentPage: number) {
+  let startIdx = (currentPage - 1) * pageSize;
+  let endIdx = startIdx + pageSize;
 
-  pageItem.forEach((page) => {
-    page.addEventListener("click", () => {
-      pageItem.forEach((item) => {
-        item.classList.remove("active");
-      });
-
-      state.currentPage = Number(page.textContent);
-      renderMovies(paginate(currentMovies, state.pageSize, state.currentPage));
-      page.classList.add("active");
-    });
-  });
-}
-function handleGenres() {
-  const listItems = document.querySelectorAll(
-    ".list-group-item"
-  ) as NodeListOf<HTMLLIElement>;
-
-  listItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      listItems.forEach((item) => {
-        item.classList.remove("active");
-      });
-      item.classList.add("active");
-      state.genre = item.textContent!;
-      currentMovies.splice(0, currentMovies.length);
-
-      for (let genre of genres) {
-        if (state.genre === genre.name) {
-          for (let movie of movies) {
-            if (movie.genre.name === state.genre) {
-              currentMovies.push(movie);
-            } else if (state.genre === "All") {
-              currentMovies.push(movie);
-            }
-          }
-          console.log(currentMovies);
-        }
-      }
-      renderMovies(paginate(currentMovies, state.pageSize, state.currentPage));
-      renderPagination(currentMovies.length);
-      handlePagination();
-    });
-  });
+  return item.slice(startIdx, endIdx);
 }
 
+// Initialize the movies page
+// This function is called to set up the initial state of the movies page
 export const moviesInit = () => {
   const paginatedMovies = paginate(movies, state.pageSize, state.currentPage);
   renderMovies(paginatedMovies);
@@ -134,11 +167,7 @@ export const moviesInit = () => {
   renderPagination(movies.length);
   handlePagination();
   handleGenres();
+  SearchHandler();
+  const searchInput = document.querySelector(".search-btn") as HTMLInputElement;
+  searchInput.value = "";
 };
-
-function paginate(item: Movie[], pageSize: number, currentPage: number) {
-  let startIdx = (currentPage - 1) * pageSize;
-  let endIdx = startIdx + pageSize;
-
-  return item.slice(startIdx, endIdx);
-}

@@ -16,19 +16,21 @@ export const PAGES: Record<Pathname, string> = {
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
           <input
-            class="form-control"
+            class="form-control email-input"
             id="email"
             placeholder="Inter your email"
           />
+          <p class="error-email text-danger"></p>
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">password</label>
           <input
             type="password"
-            class="form-control"
+            class="form-control password-input"
             id="password"
             placeholder="Inter your password"
           />
+          <p class="error-password text-danger"></p>
         </div>
         <button id="login-btn" class="btn btn-primary">Login</button>
       </form>
@@ -44,7 +46,7 @@ export const PAGES: Record<Pathname, string> = {
           <p>showing ${movies.length} movies in the database.</p>
           <input
             type="text"
-            class="form-control my-3"
+            class="search-btn form-control my-3"
             placeholder="Search..."
           />
           <table class="table">
@@ -66,36 +68,27 @@ export const PAGES: Record<Pathname, string> = {
       </div>
     </div> `,
   register: `<div class="container">
-      <h1>Register</h1>
-      <form action="">
-        <div class="mb-3">
-          <label for="email" class="form-label">Name</label>
-          <input
-            class="form-control"
-            id="email"
-            placeholder="Inter your Name"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input
-            class="form-control"
-            id="email"
-            placeholder="Inter your email"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="password"
-            placeholder="Inter your password"
-          />
-        </div>
-        <button id="register-btn" class="btn btn-primary">Register</button>
-      </form>
-    </div> `,
+  <h1>Register</h1>
+  <form>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input class="form-control name-input" id="name" placeholder="Enter your name" />
+      <p class="error-name text-danger"></p>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input class="form-control email-input" id="email" placeholder="Enter your email" />
+      <p class="error-email text-danger"></p>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control password-input" id="password" placeholder="Enter your password" />
+      <p class="error-password text-danger"></p>
+    </div>
+    <button id="register-btn" class="btn btn-primary">Register</button>
+  </form>
+</div>
+`,
   "not-found": `
     <div class="container">
     <h1>404 NOT FOUND</h1>
