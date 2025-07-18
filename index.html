@@ -6,6 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/style.css" />
     <title>PDP-21 Counter</title>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            xs: "375px",
+            sm: "640px",
+            md: "768px",
+            lg: "1024px",
+            xl: "1280px",
+          },
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+            spacing: {
+              18: "4.5rem",
+            },
+          },
+        },
+      };
+    </script>
   </head>
   <body>
     <!--Menu-->
@@ -13,11 +34,8 @@
       <div
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
       >
-        <a
-          href="https://flowbite.com/"
-          class="flex items-center space-x-3 rtl:space-x-reverse"
-        >
-          <img src="./public/Logo.png" class="h-8" alt="Flowbite Logo" />
+        <a class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="./public/Logo-2.svg" class="h-8" alt="Flowbite Logo" />
           <span
             class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
             >Mecare</span
@@ -72,6 +90,112 @@
     </nav>
 
     <!--Header-->
+    <div class="max-w-4xl mx-auto px-4 py-12 xs:px-2 xs:py-6">
+      <img
+        class="absolute bg-no-repeat w-auto h-85 left-[40%] top-[20%]"
+        src="./public/Image-header-big.svg"
+        alt="position-image"
+      />
+
+      <!-- Excellence Section -->
+      <section
+        class="bg-white rounded-xl shadow-md overflow-hidden mb-10 xs:mb-6"
+      >
+        <div
+          class="bg-gradient-to-r from-[#64D3C2] from-10% via-[#91cbcb] via-30% to-[#64D3C3] to-80% p-8 md:p-12 xs:p-4 xs:py-8"
+        >
+          <h1
+            class="ml-[15%] tracking-widest w-[100%] uppercase text-[#CBFFF5] text-3xl md:text-4xl font-bold mb-6 xs:text-xl xs:mb-4"
+          >
+            Excellence Healthcare
+          </h1>
+
+          <ul
+            class="ml-[20%] space-y-3 flex gap-[30%] mb-8 xs:space-y-2 xs:mb-6"
+          >
+            <li class="flex items-center">
+              <img src="./public/Icon-header-1.svg" alt="icon" />
+              <span class="text-gray-700 xs:text-lg">Reduce HbA1c</span>
+            </li>
+            <li class="flex items-center">
+              <img src="./public/Icon-header-2.svg" alt="icon" />
+              <span class="text-gray-700 xs:text-lg">No more medications</span>
+            </li>
+          </ul>
+
+          <div class="flex gap-[40%] align-items-end">
+            <p class="w-[33%] text-gray-600 mb-8 xs:text-lg xs:mb-6">
+              Prioritizing your well-being with top-tier medical expertise and
+              compassionate care tailored to your needs
+            </p>
+
+            <button
+              class="w-[38%] h-[20%] bg-[#3b82f6] hover:bg-[#1e40af] text-white font-medium py-3 px-6 rounded-lg transition xs:py-2 xs:px-4 xs:text-lg"
+            >
+              Schedule An Appointment
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Grid -->
+      <div class="grid md:grid-cols-3 gap-6 xs:gap-4">
+        <!-- Qualified Doctors -->
+        <div class="bg-[#FDDBDB] rounded-xl shadow-md overflow-hidden">
+          <div class="p-6 xs:p-4">
+            <h2 class="text-xl font-bold text-gray-800 mb-4 xs:text-xl xs:mb-3">
+              Qualified Doctors
+            </h2>
+            <p class="text-gray-600 mb-6 xs:text-lg xs:mb-4">
+              Schedule your appointment with your health consultation with the
+              best doctors in medicare
+            </p>
+            <button
+              class="bg-[#0D1525] text-white font-medium py-2 px-4 rounded-lg transition duration-300 xs:py-1 xs:px-3 xs:text-sm"
+            >
+              Schedule An Appointment
+            </button>
+          </div>
+        </div>
+
+        <!-- Consultation -->
+        <div class="bg-[#CFF1EC] rounded-xl shadow-md overflow-hidden">
+          <div class="p-6 xs:p-4">
+            <h2 class="text-xl font-bold text-gray-800 mb-4 xs:text-xl xs:mb-3">
+              Consultation
+            </h2>
+            <p class="text-gray-600 mb-6 xs:text-lg xs:mb-4">
+              Schedule your appointment with your health consultation with the
+              best doctors in medicare
+            </p>
+            <button
+              class="bg-[#0D1525] text-white font-medium py-2 px-4 rounded-lg transition duration-300 xs:py-1 xs:px-3 xs:text-sm"
+            >
+              Schedule An Appointment
+            </button>
+          </div>
+        </div>
+
+        <!-- 24/7 Support -->
+        <div class="bg-[#FFF6CA] rounded-xl shadow-md overflow-hidden">
+          <div class="p-6 xs:p-4">
+            <h2 class="text-xl font-bold text-gray-800 mb-4 xs:text-xl xs:mb-3">
+              24/7 Support
+            </h2>
+            <p class="text-gray-600 mb-6 xs:text-lg xs:mb-4">
+              Schedule your appointment with your health consultation with the
+              best doctors in medicare
+            </p>
+            <button
+              class="bg-[#0D1525] text-white font-medium py-2 px-4 rounded-lg transition duration-300 xs:py-1 xs:px-3 xs:text-sm"
+            >
+              Schedule An Appointment
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!--TYPE SCRIPT-->
     <script type="module" src="/src/main.ts"></script>
   </body>
